@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <link rel="stylesheet" href="./Css/style.css">
+        <link rel="stylesheet" href="./Css/footer.css">
+        <link rel="stylesheet" href="./Css/all.css">
+        <link rel="stylesheet" href="./Css/fonts.css">
+        <link rel="stylesheet" href="./Css/aos.css">
+    </head>
+
+    <body>
+
+        <!-- Header Starts -->
+        <header>
+            <div class="menu">
+                <div class="v-logo">DEVNANDAN</div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="form.html" class="nav-active">Enquire</a></li>
+                        <li><a href="product.html">Products</a></li>
+                        <li><a href="contactus.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="toggle-button">
+                <i class="fa fa-bars"></i>
+            </div>
+        </header>
+        <!-- Header Ends -->
+
+        <!-- Enquire Form Starts -->
+        <div class="contact-section" style="margin-top: 3.8rem;">
+            <h1 class="f-title" data-aos="fade-in">Enquiry Form</h1>
+            <div class="f-border" data-aos="flip-right"></div>
+            <div id=form-div>
+                <form class="contact-form" id="mainform" method="post" data-aos="fade-down">
+                    <input type="text" class="contact-form-text" name="cName" placeholder="Company Name" id="cName">
+                    <input type="text" class="contact-form-text" name="pName" placeholder="Person Name" id="pName">
+                    <input type="text" class="contact-form-text" name="pNumber" placeholder="Phone Number" id="pNumber">
+                    <input type="email" class="contact-form-text" name="eMail" placeholder="E-mailID" id="eMail">
+                    <textarea class="contact-form-text" name="aDdress" placeholder="Enter Your Address" id="aDdress"></textarea>
+                    <input type="text" class="contact-form-text" name="cIty" placeholder="City" id="cIty">
+                    <input type="text" class="contact-form-text" name="sTate" placeholder="State" id="sTate">
+                    <textarea class="contact-form-text" name="enqData" placeholder="Enquiry about Which Product??" id="enqData"></textarea>
+                    <input type="hidden" name="token" id="token" value="<?php echo generate(); ?>">
+                    <div style="display: flex; justify-content: center;" data-aos="zoom-in" data-aos-delay="300">
+                        <input type="submit" class="contact-form-btn" name="placeEnq" value="Submit" style="margin-right: 5px;">
+                        <input type="reset" class="contact-form-btn" value="Reset" style="margin-left: 5px;">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Enquire Form Ends -->
+
+        <!-- Footer Starts -->
+        <footer>
+            <div class="v-logo" data-aos="zoom-in">DEVNANDAN</div>
+            <h3 data-aos="fade-up" data-aos-delay="200"> PVT &nbsp;&nbsp; LTD</h3>
+            <h1>So how can we make you shine.?</h1>
+            <ul>
+                <li><a href="#">Products</a><i class="fas fa-dot-circle"></i></li>
+                <li><a href="#">Enquire</a><i class="fas fa-dot-circle"></i></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+        </footer>
+        <!-- Footer Ends -->
+
+        <script src="./Js/jquery.js"></script>
+        <script src="./Js/menu.js"></script>
+        <script src="./Js/typed.js"></script>
+        <script src="./Js/jquery.validate.js"></script>
+        <script src="./Js/aos.js"></script>
+        <script>
+            AOS.init();
+
+            $.validator.addMethod('phoneNumber', function(value, element) {
+                return value.length == 10;
+            }, "Phone Number Must Be 10 Digit Number.");
+
+            $('#mainform').validate({
+                rules: {
+                    cName: {
+                        required: true
+                    },
+                    pName: {
+                        required: true
+                    },
+                    cName: {
+                        required: true
+                    },
+                    aDdress: {
+                        required: true
+                    },
+                    cIty: {
+                        required: true
+                    },
+                    sTate: {
+                        required: true
+                    },
+                    eMail: {
+                        required: true,
+                        email: true
+                    },
+                    pNumber: {
+                        required: true,
+                        number: true,
+                        phoneNumber: true
+                    },
+                    enqData: {
+                        required: true,
+                        // min: 50
+                    }
+                }
+            });
+        </script>
+    </body>
+
+</html>

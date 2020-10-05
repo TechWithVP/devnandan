@@ -1,0 +1,6 @@
+<div class="product-top">
+    <a href="" class="product-btn active-pro-btn active-pro-btn-main" data-label="proBox1">Textile Auxiliaries</a>
+    <a href="" class="product-btn" data-label="proBox2">Adhesive</a>
+    <a href="" class="product-btn" data-label="proBox3">Construction chemicals</a>
+    <a href="" class="product-btn" data-label="proBox4">Paint chemicals</a>
+</d
